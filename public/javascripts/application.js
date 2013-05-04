@@ -11,3 +11,6 @@ document.observe("dom:loaded", function() {
 
     load_menu_from_plugins();
 });
+$(function() {
+$( document ).tooltip();
+});

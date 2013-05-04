@@ -1019,3 +1019,7 @@ height: 14px;
 textarea{
     font-family: Arial !important;
 }
+label {
+display: inline-block;
+width: 5em;
+}

@@ -537,7 +537,7 @@ en: # locale
   female: "Female"
   first_name: "First Name"
   middle_name: "Middle Name"
-  last_name: "Last Name"
+  last_name: "Surname"
   upload_photo: "Upload User Photo"
   no_employee_found: "No employee found"
   view: "View"
@@ -1974,6 +1974,9 @@ en: # locale
   is_final_exam: "Is Final Exam?"
   retaken: "Retaken"
   grouped_exam_reports_not_generated: "Grouped Exam Reports have not been generated for this Student."
+  
+  #Tooltip Messages
+  first_name_tooltip: "Please enter full name"
   
   flash_msg1: "Updated additional exam group successfully."
   flash_msg2: "Sorry"
