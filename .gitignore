@@ -7,6 +7,7 @@ tmp/**/*
 tmp/*
 doc/api
 doc/app
+config/*.yml
 *.swp
 *~
 .DS_Store

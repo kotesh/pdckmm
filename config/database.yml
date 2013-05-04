@@ -1,25 +1,28 @@
 development:
-      host: localhost
-      adapter: mysql
-      database: fedena_ultimate
+      host:  pdckmminstance.cqm9gzsdjxi3.ap-southeast-1.rds.amazonaws.com
+      adapter: mysql2
+      database: pdckmm_dev
       port: 3306
-      username: root
-      password: root
+      username: pdcuser
+      password: p*(7)6U$
+      encoding: utf8
 
 test: &test
-      host: localhost
-      adapter: mysql
-      database: fedena_two_new
+      host:  pdckmminstance.cqm9gzsdjxi3.ap-southeast-1.rds.amazonaws.com
+      adapter: mysql2
+      database: pdckmm_dev
       port: 3306
-      username: root
-      password: root
+      username: pdcuser
+      password: p*(7)6U$
+      encoding: utf8
 
 production:
-      host: localhost
-      adapter: mysql
-      database: fedena_ultimate
+      host: pdckmminstance.cqm9gzsdjxi3.ap-southeast-1.rds.amazonaws.com
+      adapter: mysql2
+      database: pdckmmdb
       port: 3306
-      username: root
-      password: root
+      username: pdcuser
+      password: p*(7)6U$
+      encoding: utf8
 cucumber:
   <<: *test
