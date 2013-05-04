@@ -4,22 +4,14 @@ Project Fedena is the open source school management system based on Ruby on Rail
 
 The Project Fedena website http://www.projectfedena.org/ is the home to the developer community behind Fedena project. There you can find forums and bug tracker for Fedena.
 
-#Demo
-A demo website for Fedena has been set up at demo.projectfedena.org. You can log in with following usernames and passwords:
+#College
 
-    * As admin -- username - admin, password - admin123
-    * As student -- username - 1, password - 1123
-    * As employee -- username - E1, password - E1123
+Priyadarshini College
+
 
 #License
 
 Fedena is released under the Apache License 2.0.
 
-#Installation
 
-Visit  http://projectfedena.org/install for detailed installation instruction.
-
-#Community Support:
-
-This is the fitst application for
 
