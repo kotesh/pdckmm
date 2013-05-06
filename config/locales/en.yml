@@ -74,7 +74,7 @@ en: # locale
         min_score: "Minimum Score"
 
       guardian:
-        first_name: "First Name"
+        first_name: "Full Name"
 
       news:
         title: "Title"
@@ -159,7 +159,7 @@ en: # locale
       employee:
         employee_category_id: "Employee Category"
         employee_number: "Employee Number"
-        first_name: "First Name"
+        first_name: "Full Name"
         employee_position_id: "Employee Position"
         employee_department_id: "Employee Department"
         employee_grade_id: "Employee Grade"
@@ -535,7 +535,7 @@ en: # locale
   gender: "Gender"
   male: "Male"
   female: "Female"
-  first_name: "First Name"
+  first_name: "Full Name"
   middle_name: "Middle Name"
   last_name: "Surname"
   upload_photo: "Upload User Photo"
