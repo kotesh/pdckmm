@@ -6,7 +6,8 @@
 # no regular words or you'll be exposed to dictionary attacks.
 ActionController::Base.session = {
   :key         => '_fedena_session',
-  :secret      => '93bd9933128611446605e1d410d003a6643d59c4494a56e538f4bb154284c14f5a56c8ed9e7b1b38593e6f557b1f28d763f0b0093e12ff515dea1107d2e1306b'
+  :secret      => 'sdlrewrew90rk09jsdfs3423jfds89034jlsdkdsfsmnvkhfytemmc783knsnvccvfgds453hd64hdu3kj3io328um1r6h7jd9ks0l3d7cb9',
+  :expire_after => 10.minutes
 }
 
 # Use the database for sessions instead of the cookie-based default,
