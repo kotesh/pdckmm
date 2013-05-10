@@ -107,10 +107,10 @@
         <div class="label_field_pair">
           <label class="label_for_student_gender" for="student_gender"><%= t('gender') %></label>
           <div class="student_gender_value">
+			<%= s.radio_button  "gender", "m", :checked => "checked" %>
             <label class="label_for_gender" for="student_gender_true"> <%= t('male') %></label>
-            <%= s.radio_button  "gender", "m", :checked => "checked" %>
-            <label class="label_for_gender" for="student_gender_false"><%= t('female') %></label>
             <%= s.radio_button  "gender", "f" %>
+            <label class="label_for_gender" for="student_gender_false"><%= t('female') %></label>
           </div>
         </div>
         
