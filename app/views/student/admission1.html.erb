@@ -107,11 +107,11 @@
         <div class="label_field_pair">
           <label class="label_for_student_gender" for="student_gender"><%= t('gender') %></label>
           <div class="student_gender_value">
+          	 <%= s.radio_button  "gender", "m", :checked => "checked" %>
             <label class="label_for_gender" for="student_gender_true"> <%= t('male') %></label>
-            <%= s.radio_button  "gender", "m", :checked => "checked" %>
+           	 <%= s.radio_button  "gender", "f" %>
             <label class="label_for_gender" for="student_gender_false"><%= t('female') %></label>
-            <%= s.radio_button  "gender", "f" %>
-          </div>
+            </div>
         </div>
         
       <hr class="label-underline"></hr>
@@ -119,7 +119,7 @@
       <div id="admission1_form_vertical_block_left">
 
         <div class="label-field-pair">
-          <label for="student_grade"><%= t('course_and_batch') %></label>
+          <label for="student_grade"><%= t('course_and_batch') %><span class="necessary-field">*</span></label>
           <div class="text-input-bg"><%= select :student, :batch_id, Batch.active.map {|b| [b.full_name, b.id]} %></div>
         </div>
 
@@ -150,7 +150,8 @@
 
         <div class="label-field-pair">
           <label for="student_birth_place"><%= t("mother_tongue") %></label>
-          <div class="text-input-bg"><%= s.text_field :language %></div>
+          <!--<div class="text-input-bg"><%= s.text_field :language %></div>-->
+           <div class="text-input-bg"><%= select :student, :language, ["Telugu", "Urdu", "Hindi", "Other"] %></div>
         </div>
 
         <hr class="label-underline"></hr>
@@ -189,13 +190,7 @@
           <div class="text-input-bg"><%= s.text_field :city %></div>
         </div>
         <hr class="label-underline"></hr>
-
-        <div class="label-field-pair">
-          <label for="student_state"><%= t('state') %></label>
-          <div class="text-input-bg"><%= s.text_field :state %></div>
-        </div>
-        <hr class="label-underline"></hr>
-
+        
         <div class="label-field-pair">
           <label for="student_pin_code"><%= t('zip') %></label>
           <div class="text-input-bg"><%= s.text_field :pin_code %></div>
@@ -203,9 +198,17 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
+          <label for="student_state"><%= t('state') %></label>
+          <div class="text-input-bg"><%= s.text_field :state, :value => t('ap_state') %></div>
+        </div>
+        <hr class="label-underline"></hr>
+
+       
+
+       <!-- <div class="label-field-pair">
           <label for="student_country"><%= t('country') %></label>
           <div class="text-input-bg"> <%= select :student, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected=> @student.country_id || @selected_value.to_i %> </div>
-        </div>
+        </div>-->
 
         <hr class="label-underline"></hr>
 

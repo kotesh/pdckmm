@@ -1360,8 +1360,8 @@ en: # locale
   has_paid_all_the_fees: "Has paid fees all fees for the batch."
   transfer_certificate: "Transfer Certificate"
   previous_details: "Previous Details"
-  previous_educational_details: "Previous Educational Details"
-  institution_name: "Institution Name"
+  previous_educational_details: "Intermediate/10+2 Details"
+  institution_name: "College Name"
   previous_year_result: "Previous years results overview"
   class_sec: "Class/Sec"
   reports_text: "Reports"
@@ -1974,6 +1974,8 @@ en: # locale
   is_final_exam: "Is Final Exam?"
   retaken: "Retaken"
   grouped_exam_reports_not_generated: "Grouped Exam Reports have not been generated for this Student."
+  mother_tongue_other: "Other"
+  ap_state: "Andhra Pradesh"
   
   #Tooltip Messages
   first_name_tooltip: "Please enter full name"
