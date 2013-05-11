@@ -1975,8 +1975,11 @@ en: # locale
   retaken: "Retaken"
   grouped_exam_reports_not_generated: "Grouped Exam Reports have not been generated for this Student."
   
-  #Tooltip Messages
+  ##### NEWLY ADDED ######
+  #Tooltip Messages 
   first_name_tooltip: "Please enter full name"
+  ap_state: "Andhra Pradesh"
+  attendance_for_future_date_not_allowed: "Attendance for future data not allowed"  
   
   flash_msg1: "Updated additional exam group successfully."
   flash_msg2: "Sorry"

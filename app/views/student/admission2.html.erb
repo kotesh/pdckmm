@@ -92,13 +92,13 @@
           <div class="text-input-bg"><%= f.text_field :relation %></div>
         </div>
 
-        <hr class="label-underline"></hr>
+      <!--  <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
           <label for="parent_detail_dob"><%= t("date_of_birth") %></label>
           <div class="text-input-bg"><%= calendar_date_select_tag 'guardian[dob]', nil,
               :year_range => 60.years.ago..20.years.ago, :readonly=>true, :popup=>"force" %></div>
-        </div>
+        </div> -->
 
         <hr class="label-underline"></hr>
 
@@ -179,7 +179,7 @@
           <% end %>
         </div>
 
-        <hr class="label-underline"></hr>
+      <!--  <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
           <label for="parent_detail_country"><%= t('country') %></label>
@@ -188,7 +188,7 @@
           <% else %>
             <div class="text-input-bg"> <%= select :guardian, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected => 76 %> </div>
           <% end %>
-        </div>
+        </div>-->
 
         <hr class="label-underline"></hr>
 

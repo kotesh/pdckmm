@@ -133,22 +133,15 @@
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
-          <label for="master_student_nationality"><%= t('nationality') %></label>
-          <div class="text-input-bg"><%= select :student, :nationality_id, Country.all.map {|c| [c.name, c.id]}, :selected => @student.nationality.id %></div>
-        </div>
-
-        <hr class="label-underline"></hr>
-
-        <div class="label-field-pair">
           <label for="master_student_birth_place"><%= t('mother_tongue') %></label>
-          <div class="text-input-bg"><%= s.text_field :language, :value => @student.language %></div>
+          <div class="text-input-bg"><%= select :student, :language, ["Telugu", "Urdu", "Hindi", "English", "Other"],:selected => @student.language %></div>
         </div>
 
         <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
           <label for="master_student_religion"><%= t('religion') %></label>
-          <div class="text-input-bg"><%= s.text_field :religion, :value =>@student.religion %></div>
+          <div class="text-input-bg"><%= select :student, :religion, ["Hindu", "Muslim", "Christian","Other"],:selected => @student.religion %></div>
         </div>
 
         <hr class="label-underline"></hr>
@@ -198,14 +191,7 @@
           <div class="text-input-bg"><%= s.text_field :pin_code, :value =>@student.pin_code %></div>
         </div>
 
-        <hr class="label-underline"></hr>
-
-        <div class="label-field-pair">
-          <label for="master_student_country"><%= t('country') %></label>
-          <div class="text-input-bg"><%= select :student, :country_id, Country.all.map {|c| [c.name, c.id]}, :selected => @student.country.id %></div>
-        </div>
-
-        <hr class="label-underline"></hr>
+       <hr class="label-underline"></hr>
 
         <div class="label-field-pair">
           <label for="master_student_phone1"><%= t('phone') %></label>
