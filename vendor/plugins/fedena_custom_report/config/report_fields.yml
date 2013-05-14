@@ -1,0 +1,98 @@
+---
+:fields_to_search:
+  :employee:
+    :integer: []
+
+    :date:
+    - :date_of_birth
+    :boolean: []
+
+    :association:
+    - :employee_position
+    - :employee_department
+    - :employee_grade
+    - :nationality
+    :string:
+    - :first_name
+    - :middle_name
+    - :last_name
+    - :employee_number
+    - :job_title
+    - :qualification
+    - :marital_status
+    - :blood_group
+    
+  :student:
+    :integer: []
+
+    :date:
+    - :admission_date
+    - :date_of_birth
+    :boolean: []
+
+    :association:
+    - :country
+    - :nationality
+    - :student_category
+    - :batch
+    - :course
+    :string:
+    - :admission_no
+    - :first_name
+    - :middle_name
+    - :last_name
+    - :gender
+    - :blood_group
+    - :language
+    - :religion
+    - :city
+    - :state
+:fields_to_display:
+  :employee:
+  - :first_name
+  - :middle_name
+  - :last_name
+  - :employee_number
+  - :job_title
+  - :qualification
+  - :marital_status
+  - :blood_group
+  - :date_of_birth
+  - :employee_number
+  - :employee_position
+  - :employee_department
+  - :employee_grade
+  - :nationality
+  :student:
+  - :admission_date
+  - :date_of_birth
+  - :country
+  - :nationality
+  - :student_category
+  - :batch
+  - :course
+  - :admission_no
+  - :first_name
+  - :middle_name
+  - :last_name
+  - :gender
+  - :blood_group
+  - :language
+  - :religion
+  - :city
+  - :state
+  - :immediate_contact
+  - :parent_first_name
+  - :parent_last_name
+  - :parent_relation
+  - :parent_dob
+  - :parent_education
+  - :parent_occupation
+  - :parent_income
+  - :parent_email
+  - :parent_office_address_line1
+  - :parent_office_address_line2
+  - :parent_city
+  - :parent_state
+  - :parent_office_phone1
+  - :parent_mobile_phone

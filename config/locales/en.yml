@@ -1977,8 +1977,11 @@ en: # locale
   mother_tongue_other: "Other"
   ap_state: "Andhra Pradesh"
   
-  #Tooltip Messages
+  ##### NEWLY ADDED ######
+  #Tooltip Messages 
   first_name_tooltip: "Please enter full name"
+  ap_state: "Andhra Pradesh"
+  attendance_for_future_date_not_allowed: "Attendance for future data not allowed"  
   
   flash_msg1: "Updated additional exam group successfully."
   flash_msg2: "Sorry"

@@ -74,13 +74,6 @@
       <hr class="label-underline"></hr>
 
       <div class="label-field-pair">
-        <label for="employee_name"><%= t('middle_name') %></label>
-        <div class="text-input-bg"><%= a.text_field :middle_name, :value => @employee.middle_name %></div>
-      </div>
-
-      <hr class="label-underline"></hr>
-
-      <div class="label-field-pair">
         <label for="employee_name"><%= t('last_name') %><span class="necessary-field">*</span> </label>
         <div class="text-input-bg"><%= a.text_field :last_name, :value => @employee.last_name %></div>
       </div>
@@ -149,11 +142,11 @@
       <div class="label_field_pair">
         <label class="label_for_employee_gender" for="master_student_gender"><%= t('gender') %></label>
         <div class="employee_gender_value">
+		  <%= a.radio_button  "gender", "true", :checked => "checked" %>
           <label class="label_for_gender" for="master_student_gender_true"><%= t('male') %></label>
-          <%= a.radio_button  "gender", "true", :checked => "checked" %>
-
-          <label class="label_for_gender" for="master_student_gender_false"><%= t('female') %></label>
           <%= a.radio_button  "gender", "false" %>
+           <label class="label_for_gender" for="master_student_gender_false"><%= t('female') %></label>
+          
         </div>
       </div>
       <hr class="label-underline"></hr>

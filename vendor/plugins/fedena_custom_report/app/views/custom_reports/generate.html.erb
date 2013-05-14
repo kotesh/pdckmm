@@ -1,0 +1,124 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "livevalidation","report" %>
+<% end %>
+<div id="content-header">
+  <h1><%=t('custom_report') %></h1>
+  <h3><%="#{t('new_report')}" %></h3>
+</div>
+<div id="inner-tab-menu">
+  <ul>
+    <% if permitted_to? :index, :custom_reports %>
+      <li>
+        <%=link_to "#{t('show_all_reports')}" ,:controller=>:custom_reports,:action=>:index%>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<% form_for @report, :url=>{:action=>:generate},:html=>{:onSubmit=>'return validate_form()'} do |form| %>
+  <%= form.error_messages %>
+  <ul id="category-list">
+    <li class="heading">
+      <%= form.label :name, "#{t('name')}" %>
+      <%= form.text_field :name , :live=>true%>
+    </li>
+
+    <%= form.hidden_field(:model) %>
+
+    <% i=0 %>
+    <% @search_fields.each do|key,columns| %>
+      <% columns.each do |col| %>
+        <%if i%3==0 %>
+          <li class="list<%=cycle('odd', 'even')%>">
+          <%end%>
+          <span class="col-cell">
+            <%= check_box_tag "report_fields[#{col.to_s}][]",
+              col.to_s,
+              false,:class=>"cbox",:id=>col.to_s,
+              :Onload=>"div_toggle();"%>
+            <%= key==:additional ? ("#{col}").titleize : t(col) %>
+          </span>
+          <%if i%3==2 %>
+          </li>
+        <%end%>
+        <% i+=1 %>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="query-fields">
+    <li class="info" id="disp">
+      <p><%= t('select_search_criterias') %></p>
+    </li>
+    <% i = 0 %>
+    <% form.fields_for :report_queries do |qform|  %>
+
+      <% rq = qform.object %>
+
+      <div class="<%=rq.field_name %> fields">
+        <label class="column"><%= rq.column_type == :additional ? ("#{rq.field_name}").titleize : t(rq.field_name) %></label>
+        <%= qform.hidden_field(:column_name)  %>
+        <%= qform.hidden_field(:table_name)  %>
+        <%= qform.hidden_field(:criteria)  %>
+        <%= qform.hidden_field(:column_type)  %>
+        <% case rq.column_type
+        when :string %>
+          <div class="text">
+            <label class="criteria"><%= rq.criteria_to_s %></label>
+            <%= qform.text_field :query %>
+          </div>
+        <% when :date %>
+          <div class="date">
+            <label class="criteria"><%= rq.criteria_to_s %></label>
+            <%= qform.date_select :date_query,:use_short_month=>true,:start_year=>60.years.ago.year,:end_year=>2.years.since.year,:order=>[:day,:month,:year],:include_blank => true %>
+          </div>
+
+      
+        <% when :boolean %>
+          <div class="radio-button">
+            <label class="criteria"><%= rq.criteria_to_s %></label>
+            <%= qform.radio_button(:query, 1) %> <label>YES</label>
+            <%= qform.radio_button(:query, 0) %> <label>NO</label>
+          </div>
+        <% when :integer %>
+          <div class="text">
+            <label class="criteria"><%= rq.criteria_to_s %></label>
+            <%= rq.query.to_s %>
+            <%= qform.text_field :query   %>
+          </div>
+
+        <% end %>
+      </div>
+      <% i+=1 %>
+    <% end %>
+  </div>
+
+  <div class="report-columns">
+    <li class="info">
+      <p><%= t('select_search_fields') %></p>
+    </li>
+    <ul id="src" class="report-columns-left">
+      <%pri=0%>
+      <% form.fields_for :report_columns do |qform|  %>
+        <% rq=qform.object %>
+        <% pri +=1 %>
+        <li id="<%= rq.method.to_s %>-column"class="column-list">
+          <label class="column-label"><%= t(rq.method) %></label>
+          <%= qform.text_field :title,:class=>'column_title',:id=>rq.method.to_s+'-column'  %>
+          <%= qform.hidden_field(:method) %>
+          <%= qform.hidden_field :position,:value=>pri,:class=>'position' %>
+          <%= qform.hidden_field :_destroy,:value=>1,:class=>'destroy' %>
+          <a class="add button"></a>
+          <a class="remove button"></a>
+          <a class="mup button"></a>
+          <a class="mud button"></a>
+        </li>
+      <% end %>
+
+    </ul>
+    <ul id="dest" class="report-columns-right" >
+
+    </ul>
+  </div>
+  <%= form.submit "#{t('save')}", :class=>'submit_button'%>
+<% end %>
+

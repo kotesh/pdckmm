@@ -47,20 +47,18 @@
     <tr class="odd"><td><%= t('date_of_birth') %></td><td class="right"><%= I18n.l(@student.date_of_birth,:format=>:normal) unless @student.date_of_birth.nil? %></td></tr>
     <tr class="even"><td><%= t('blood_group') %></td><td class="right"><%= @student.blood_group %></td></tr>
     <tr class="odd"><td><%= t('gender') %></td><td class="right"><%= t("#{@student.gender_as_text.downcase}") %></td></tr>
-    <tr class="even"><td><%= t('nationality') %></td><td class="right"><%= @student.nationality.name unless @student.nationality_id.nil? %></td></tr>
-    <tr class="odd"><td><%= t('language') %></td><td class="right"><%= @student.language %></td></tr>
+    <tr class="even"><td><%= t('language') %></td><td class="right"><%= @student.language %></td></tr>
 
     <tr class="even"><td><%= t('category') %></td><td class="right"><%= @student.student_category.name unless @student.student_category.nil? %></td></tr>
     <tr class="odd"><td><%= t('religion') %></td><td class="right"><%= @student.religion %></td></tr>
     <tr class="even"><td><%= t('address') %></td><td class="right"><%= @student.address_line1%><%= ', ' unless @student.address_line1.blank? %><%=  @student.address_line2 %></td></tr>
     <tr class="odd"><td><%= t('city') %></td><td class="right"><%= @student.city %></td></tr>
-    <tr class="even"><td><%= t('state') %></td><td class="right"><%= @student.state %></td></tr>
-    <tr class="odd"><td><%= t('zip') %></td><td class="right"><%= @student.pin_code %></td></tr>
-    <tr class="even"><td><%= t('country') %></td><td class="right"><%= @student.country.name unless @student.country_id.nil? %></td></tr>
-    <tr class="odd"><td><%= t('phone') %></td><td class="right"><%= @student.phone1 %></td></tr>
-    <tr class="even"><td><%= t('mobile') %></td><td class="right"><%= @student.phone2 %></td></tr>
-    <tr class="odd"><td><%= t('email') %></td><td class="right"><%= @student.email %></td></tr>
-    <tr class="even"><td><%= t('group_tutor') %></td><td class="right">
+    <tr class="even"><td><%= t('zip') %></td><td class="right"><%= @student.pin_code %></td></tr>
+    <tr class="odd"><td><%= t('state') %></td><td class="right"><%= @student.state %></td></tr>
+    <tr class="even"><td><%= t('phone') %></td><td class="right"><%= @student.phone1 %></td></tr>
+    <tr class="odd"><td><%= t('mobile') %></td><td class="right"><%= @student.phone2 %></td></tr>
+    <tr class="even"><td><%= t('email') %></td><td class="right"><%= @student.email %></td></tr>
+    <tr class="odd"><td><%= t('group_tutor') %></td><td class="right">
         <% unless @student.batch.employee_id.nil? %>
           <% @assigned_employees = Employee.find(:all,:conditions=>"FIND_IN_SET(id,\"#{@student.batch.employee_id}\")")  %>
 

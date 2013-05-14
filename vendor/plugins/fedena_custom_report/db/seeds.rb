@@ -1,0 +1,2 @@
+Privilege.find_or_create_by_name(:name => 'CustomReportControl',:description => 'custom_report_control_privilege')
+Privilege.find_or_create_by_name(:name => 'CustomReportView',:description => 'custom_report_view_privilege')

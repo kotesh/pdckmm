@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "archived_exam_scores" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb54a4344>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e3a7b4>
 
   create_table "archived_guardians", :force => true do |t|
     t.integer  "ward_id"
@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "assessment_scores" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5485408>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e272f4>
 
   create_table "assets", :force => true do |t|
     t.string   "title"
@@ -214,8 +214,14 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
     t.datetime "updated_at"
   end
 
+# Could not dump table "assignment_answers" because of following NoMethodError
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e2024c>
+
+# Could not dump table "assignments" because of following NoMethodError
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e1be54>
+
 # Could not dump table "attendances" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5475864>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e18cf4>
 
   create_table "bank_fields", :force => true do |t|
     t.string  "name"
@@ -223,7 +229,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "batch_events" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb546e1cc>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e15284>
 
   create_table "batch_groups", :force => true do |t|
     t.integer  "course_id"
@@ -233,19 +239,19 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "batch_students" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5466b84>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e11d64>
 
 # Could not dump table "batches" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5461148>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e0eb28>
 
 # Could not dump table "book_movements" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb545d4f8>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e0b694>
 
 # Could not dump table "book_reservations" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb54590ec>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e08ca0>
 
 # Could not dump table "books" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5455974>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5e05898>
 
   create_table "cce_exam_categories", :force => true do |t|
     t.string   "name"
@@ -261,10 +267,10 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "cce_grades" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5447428>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5dffe48>
 
 # Could not dump table "cce_reports" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5440650>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5dfcc48>
 
   create_table "cce_weightages", :force => true do |t|
     t.integer  "weightage"
@@ -275,7 +281,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "cce_weightages_courses" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb543b768>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5df8e18>
 
   create_table "class_designations", :force => true do |t|
     t.string   "name",                                      :null => false
@@ -287,26 +293,26 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "class_timings" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5432d20>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5df31e8>
 
 # Could not dump table "configurations" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5430df4>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5df149c>
 
   create_table "countries", :force => true do |t|
     t.string "name"
   end
 
 # Could not dump table "courses" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb542ac24>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5ded310>
 
 # Could not dump table "courses_observation_groups" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5428690>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5deba4c>
 
 # Could not dump table "delayed_jobs" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5423190>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5de7d48>
 
 # Could not dump table "descriptive_indicators" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5420120>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5de4f6c>
 
   create_table "elective_groups", :force => true do |t|
     t.string   "name"
@@ -400,13 +406,13 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "employees" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53ecf14>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5dbd82c>
 
 # Could not dump table "employees_subjects" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53eb434>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5dbbb94>
 
 # Could not dump table "events" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53e7028>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5db648c>
 
   create_table "exam_groups", :force => true do |t|
     t.string  "name"
@@ -420,13 +426,13 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "exam_scores" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53e087c>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5daf3e4>
 
 # Could not dump table "exams" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53dc114>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5da8990>
 
 # Could not dump table "fa_criterias" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53d90e0>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5da5844>
 
   create_table "fa_groups", :force => true do |t|
     t.string   "name"
@@ -440,7 +446,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "fa_groups_subjects" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53d4be4>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d9e83c>
 
   create_table "fee_collection_discounts", :force => true do |t|
     t.string   "type"
@@ -496,7 +502,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "finance_fee_collections" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53c2890>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d8a74c>
 
   create_table "finance_fee_particulars", :force => true do |t|
     t.string   "name"
@@ -523,7 +529,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "finance_fees" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53b9524>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d7b238>
 
   create_table "finance_transaction_categories", :force => true do |t|
     t.string  "name"
@@ -561,16 +567,16 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "grading_levels" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53abaa0>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d65bf4>
 
 # Could not dump table "grouped_batches" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53a97f0>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d638a4>
 
 # Could not dump table "grouped_exam_reports" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53a621c>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d5ff9c>
 
 # Could not dump table "grouped_exams" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53a3e40>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d5d5d0>
 
   create_table "guardians", :force => true do |t|
     t.integer  "ward_id"
@@ -615,7 +621,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "library_card_settings" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5396f10>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d48bbc>
 
   create_table "monthly_payslips", :force => true do |t|
     t.date    "salary_date"
@@ -660,7 +666,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "observations" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb53898b0>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d3afd0>
 
   create_table "payroll_categories", :force => true do |t|
     t.string  "name"
@@ -671,10 +677,10 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "period_entries" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5385530>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d36980>
 
 # Could not dump table "previous_exam_scores" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5381e80>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d331a4>
 
   create_table "privileges", :force => true do |t|
     t.string   "name"
@@ -684,7 +690,7 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "privileges_users" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb537ea50>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d2fb94>
 
   create_table "ranking_levels", :force => true do |t|
     t.string   "name",                                                                 :null => false
@@ -701,7 +707,16 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "reminders" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5376ee0>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d27c28>
+
+# Could not dump table "report_columns" because of following NoMethodError
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d24dfc>
+
+# Could not dump table "report_queries" because of following NoMethodError
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d217b0>
+
+# Could not dump table "reports" because of following NoMethodError
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5d1f014>
 
   create_table "school_details", :force => true do |t|
     t.integer  "school_id"
@@ -762,22 +777,22 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "students" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb535d83c>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cfaac0>
 
 # Could not dump table "students_subjects" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb535b668>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cf8748>
 
 # Could not dump table "subject_leaves" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5358224>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cf51ec>
 
 # Could not dump table "subjects" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5353210>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cf014c>
 
 # Could not dump table "taggings" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5350ac4>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5ceda00>
 
 # Could not dump table "tags" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb534ed14>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cebc3c>
 
   create_table "time_zones", :force => true do |t|
     t.string   "name"
@@ -789,10 +804,10 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "timetable_entries" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb534a23c>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5ce7010>
 
 # Could not dump table "timetables" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5347ac8>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5ce475c>
 
   create_table "user_events", :force => true do |t|
     t.integer  "event_id"
@@ -802,9 +817,9 @@ ActiveRecord::Schema.define(:version => 20120816045034) do
   end
 
 # Could not dump table "users" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5341a24>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cde564>
 
 # Could not dump table "weekdays" because of following NoMethodError
-#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb533ee78>
+#   undefined method `limits' for #<ActiveRecord::ConnectionAdapters::Mysql2IndexDefinition:0xb5cdb8a0>
 
 end
