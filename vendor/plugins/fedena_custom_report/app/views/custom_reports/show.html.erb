@@ -1,0 +1,58 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "table_sort" %>
+  <%= stylesheet_link_tag 'custom_reports/print_show',:media => :print %>
+<% end %>
+<div id="content-header">
+  <h1><%= t('custom_reports') %></h1>
+  <h3><%= @report.name %></h3>
+</div>
+<div id="inner-tab-menu">
+  <ul>
+    <% if permitted_to? :index, :custom_reports %>
+      <li>
+        <%=link_to t('show_all_reports') ,:controller=>:custom_reports,:action=>:index%>
+      </li>
+    <% end %>
+    <% if permitted_to? :generate, :custom_reports %>
+      <li>
+        <%=link_to t('new_student_report') ,:controller=>:custom_reports,:action=>:generate,:id=>'student'%>
+      </li>
+      <li>
+        <%=link_to t('new_employee_report') ,:controller=>:custom_reports,:action=>:generate,:id=>'employee'%>
+      </li>
+    <% end %>
+
+    <li>
+      <%= link_to t('export_csv'),:controller=>:custom_reports, :action=>:to_csv,:id=>@report.id %>
+    </li>
+    <li>
+      <%= link_to_function t('print'),"window.print()",:id=>:print_button %>
+    </li>
+
+  </ul>
+</div>
+<div class="scroll">
+  <div class="tables">    
+    <div >
+      <table class="report-table sortable" id="sortable_example">
+        <tr class="report-header">
+          <th class="sinumber unsortable" nowrap="nowrap">SL No.</th>
+          <%@report_columns.each do |rc| %>
+            <th data-type="<%=@column_type[rc.method]%>" nowrap="nowrap">
+              <%= rc.title %>
+            </th>
+          <% end %>
+        </tr>
+        <% @search_results.each_with_index do |obj,serial_no| %>
+          <tr class="report-row">
+            <td class="sinumber slcol"><%= ((@search_results.current_page-1)*@search_results.per_page)+serial_no+=1 %></td>
+            <% @report_columns.each do |col| %>
+              <td><%=  obj.send(col.method) %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <%= will_paginate @search_results %>
+  </div>
+</div>
