@@ -108,14 +108,14 @@ class CustomReportsController < ApplicationController
     send_data(csv, :type => 'text/csv; charset=utf-8; header=present', :filename => filename)
   end
   
-  def to_xls
-      report=Report.find params[:id]
-      report_columns = report.report_columns
-      report_columns.delete_if{|rc| !((report.model_object.instance_methods+report.model_object.column_names).include?(rc.method))}
-      xls = report.to_csv(col_sep: "\t")
-      filename = "#{report.name}-#{Time.now.to_date.to_s}.xls"
-      send_data(xls, :type => 'application/xls; charset=utf-8; header=present', :filename => filename)
-  end
+  #def to_xls
+     # report=Report.find params[:id]
+     # report_columns = report.report_columns
+    #  report_columns.delete_if{|rc| !((report.model_object.instance_methods+report.model_object.column_names).include?(rc.method))}
+    #  xls = report.to_csv(col_sep: "\t")
+    #  filename = "#{report.name}-#{Time.now.to_date.to_s}.xls"
+    #  send_data(xls, :type => 'application/xls; charset=utf-8; header=present', :filename => filename)
+ # end
   
   def delete
     if Report.destroy params[:id]

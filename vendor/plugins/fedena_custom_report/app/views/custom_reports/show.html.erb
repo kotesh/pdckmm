@@ -25,9 +25,9 @@
     <li>
       <%= link_to t('export_csv'),:controller=>:custom_reports, :action=>:to_csv,:id=>@report.id %>
     </li> 
-    <li>
+    <!--<li>
           <%= link_to t('export_xls'),:controller=>:custom_reports, :action=>:to_xls,:id=>@report.id %>
-    </li>
+    </li> -->
     <li>
       <%= link_to_function t('print'),"window.print()",:id=>:print_button %>
     </li>
