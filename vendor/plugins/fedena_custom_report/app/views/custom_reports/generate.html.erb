@@ -71,7 +71,16 @@
             <label class="criteria"><%= rq.criteria_to_s %></label>
             <%= qform.date_select :date_query,:use_short_month=>true,:start_year=>60.years.ago.year,:end_year=>2.years.since.year,:order=>[:day,:month,:year],:include_blank => true %>
           </div>
-
+       <% when :association %>
+          <br/>
+          <label class="criteria"><%= rq.criteria_to_s %></label>
+          <br/>
+          <% rq.values_for_associations.each do |v|%>
+            <div class="check">
+              <%=  check_box_tag "report[report_queries_attributes][#{i}][query][]" ,v.id  %>
+              <label class="criteria"><%= v %></label>
+            </div>
+          <% end %>
       
         <% when :boolean %>
           <div class="radio-button">

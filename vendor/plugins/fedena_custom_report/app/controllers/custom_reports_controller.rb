@@ -105,17 +105,20 @@ class CustomReportsController < ApplicationController
     report_columns.delete_if{|rc| !((report.model_object.instance_methods+report.model_object.column_names).include?(rc.method))}
     csv = report.to_csv
     filename = "#{report.name}-#{Time.now.to_date.to_s}.csv"
+   # hash_to_excel_csv report, filename
     send_data(csv, :type => 'text/csv; charset=utf-8; header=present', :filename => filename)
   end
-  
-  #def to_xls
-     # report=Report.find params[:id]
-     # report_columns = report.report_columns
-    #  report_columns.delete_if{|rc| !((report.model_object.instance_methods+report.model_object.column_names).include?(rc.method))}
-    #  xls = report.to_csv(col_sep: "\t")
-    #  filename = "#{report.name}-#{Time.now.to_date.to_s}.xls"
-    #  send_data(xls, :type => 'application/xls; charset=utf-8; header=present', :filename => filename)
- # end
+
+=begin  
+ def to_xls
+      report=Report.find params[:id]
+      report_columns = report.report_columns
+      report_columns.delete_if{|rc| !((report.model_object.instance_methods+report.model_object.column_names).include?(rc.method))}
+      csv = report.to_csv
+      filename = "#{report.name}-#{Time.now.to_date.to_s}.csv"
+      send_data(xls, :type => 'text/csv; charset=utf-8; header=present', :filename => filename)
+  end
+=end 
   
   def delete
     if Report.destroy params[:id]
@@ -126,8 +129,23 @@ class CustomReportsController < ApplicationController
     redirect_to :action=>'index'
   end
   
+private
+  
+  def hash_to_excel_csv(collection, filename)
+    keys = collection.first.keys
+    resp = CSV.generate(:col_sep => ";", :force_quotes => true) do |csv|
+      csv << keys.map{|i|i.to_s.titleize}
+      collection.each do |job|
+        csv << job.values
+      end
+    end
 
-  private
+    send_data resp.encode(Encoding::ISO_8859_1, :undef => :replace),
+      :type => 'text/csv; charset=iso-8859-1; header=present',
+      :disposition => "attachment; filename=#{filename}.csv"
+  end
+
+ private
 
  def make_report_columns
    ##@display_fields = ["admission_date","first_name","last_name","student_category","batch","course","admission_no","language","blood_group","date_of_birth","employee_position","employee_department","employee_grade"]
